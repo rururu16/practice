@@ -11,7 +11,7 @@ class Calendar
     ans = '   ' * start_yobi
     (1..end_date.day).each_with_index do |d, i|
       i += start_yobi
-      ans += "\n" if (i % 7).zero? && i != 0
+      ans = ans.chop! + "\n" if (i % 7).zero? && i != 0
       ans += d >= 10 ? "#{d} " : " #{d} "
     end
 
